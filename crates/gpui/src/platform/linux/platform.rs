@@ -565,6 +565,7 @@ impl CursorStyle {
             CursorStyle::DragLink => Shape::Alias,
             CursorStyle::DragCopy => Shape::Copy,
             CursorStyle::ContextualMenu => Shape::ContextMenu,
+            CursorStyle::Progress => Shape::Progress,
         }
     }
 
@@ -592,6 +593,7 @@ impl CursorStyle {
             CursorStyle::DragLink => "alias",
             CursorStyle::DragCopy => "copy",
             CursorStyle::ContextualMenu => "context-menu",
+            CursorStyle::Progress => "progress",
         }
         .to_string()
     }

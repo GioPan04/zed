@@ -832,6 +832,10 @@ pub enum CursorStyle {
     /// A cursor indicating that the operation will result in a context menu
     /// corresponds to the CSS cursor value `context-menu`
     ContextualMenu,
+
+    /// A cursor indicating that a job is running in the background but the
+    /// user can still interact with the interface
+    Progress,
 }
 
 impl Default for CursorStyle {
