@@ -86,6 +86,7 @@ pub(crate) fn load_cursor(style: CursorStyle) -> HCURSOR {
     static SIZEWE: OnceLock<HCURSOR> = OnceLock::new();
     static SIZENS: OnceLock<HCURSOR> = OnceLock::new();
     static NO: OnceLock<HCURSOR> = OnceLock::new();
+    static WAIT: OnceLock<HCURSOR> = OnceLock::new();
     let (lock, name) = match style {
         CursorStyle::IBeam | CursorStyle::IBeamCursorForVerticalLayout => (&IBEAM, IDC_IBEAM),
         CursorStyle::Crosshair => (&CROSS, IDC_CROSS),
@@ -99,6 +100,7 @@ pub(crate) fn load_cursor(style: CursorStyle) -> HCURSOR {
         | CursorStyle::ResizeUpDown
         | CursorStyle::ResizeRow => (&SIZENS, IDC_SIZENS),
         CursorStyle::OperationNotAllowed => (&NO, IDC_NO),
+        CursorStyle::Progress => (&WAIT, IDC_WAIT),
         _ => (&ARROW, IDC_ARROW),
     };
     *lock.get_or_init(|| {
